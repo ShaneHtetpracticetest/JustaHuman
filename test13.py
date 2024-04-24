@@ -1,1 +1,1 @@
-print("MU P X P")
+print("MU P X TOT ML")
