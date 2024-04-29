@@ -1,11 +1,11 @@
 Collection = ['Pepsi', 'Olivia', 'Selena', 'Sza', 'Lana', 'Yurisa']
 
-if 'Pepsi' in Collection:
-    print("YES it is")
+Collection.insert(1, "Da Hell")
+print(Collection)
 
 
-
-
+# if 'Pepsi' in Collection:
+#     print("YES it is")
 
 # print(Collection)
 # print(type(Collection))
