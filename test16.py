@@ -1,10 +1,7 @@
 Collection = ['Pepsi', 'Olivia', 'Selena', 'Sza', 'Lana', 'Yurisa']
 
-Collection[5] = "Yaosabi"
-print(Collection)
-
-
-
+# Collection[5] = "Yaosabi"
+# print(Collection)
 
 # Collection.insert(1, "Da Hell")
 # print(Collection)
