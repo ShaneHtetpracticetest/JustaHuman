@@ -78,6 +78,6 @@
 # dd = {1,2,5,3,6,3,4,6,7}
 # print(dd)
 
-tupple = (1,2,3,4,5)
-tupple = tupple + (6,)
-print(tupple)
+# tupple = (1,2,3,4,5)
+# tupple = tupple + (6,)
+# print(tupple)
