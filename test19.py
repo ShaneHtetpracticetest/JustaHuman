@@ -1,6 +1,6 @@
 user_info = {
     'username' : "Peanut"
-    'age' : 16
+    'age' : 17
     'fav_waifu' : {
         'waifu1' : 'Raiden Shogen',
         'waifu2' : 'Raiden Mei',
@@ -11,5 +11,4 @@ user_info = {
         'game2': 'Roblox',
         'game3': 'Call of duty War zone'
     }
-
 }
