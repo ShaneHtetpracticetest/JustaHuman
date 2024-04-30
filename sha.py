@@ -70,3 +70,14 @@
 # my_set.add(6)
 # print(my_set)
 
+# cc = [1,2,3,4,6,7,4,5,6]
+# print(cc)
+# aa = set(cc)
+# print(aa)
+
+# dd = {1,2,5,3,6,3,4,6,7}
+# print(dd)
+
+tupple = (1,2,3,4,5)
+tupple = tupple + (6,)
+print(tupple)
