@@ -61,4 +61,11 @@
 # tuple_without_duplicate = set(my_tuple)
 # print(tuple_without_duplicate)
 
+my_set = {1,2,3,4,5}
+print(my_set)
 
+# my_tuple[0] = 10
+# print(my_tuple)
+
+my_set.add(6)
+print(my_set)
