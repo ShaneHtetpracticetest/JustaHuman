@@ -81,3 +81,120 @@
 # tupple = (1,2,3,4,5)
 # tupple = tupple + (6,)
 # print(tupple)
+
+# import time
+
+# # Global variables
+# stamina = 100
+# sprint_cost = 10  # Stamina cost for sprinting
+
+# # Function to decrease stamina over time
+# def decrease_stamina():
+#     global stamina
+#     while True:
+#         time.sleep(10)  # Decrease stamina every 10 seconds
+#         if stamina > 0:
+#             stamina -= 5  # Decrease stamina by 5 points
+#         else:
+#             stamina = 0
+
+# # Function to simulate a sprint action
+# def sprint():
+#     global stamina
+#     if stamina >= sprint_cost:
+#         stamina -= sprint_cost
+#     else:
+#         print("Not enough stamina to sprint!")
+
+# # Start decreasing stamina in a separate thread
+# import threading
+# thread = threading.Thread(target=decrease_stamina)
+# thread.daemon = True
+# thread.start()
+
+# # Simulate sprint actions
+# while True:
+#     sprint()
+#     print("Stamina:", stamina)
+#     time.sleep(2)  # Simulate some delay between sprint actions
+
+
+# import time
+
+# # Global variables
+# stamina = 100
+# sprint_cost = 10  # Stamina cost for sprinting
+
+# # Function to decrease stamina over time
+# def decrease_stamina():
+#     global stamina
+#     while True:
+#         time.sleep(10)  # Decrease stamina every 10 seconds
+#         if stamina > 0:
+#             stamina -= 5  # Decrease stamina by 5 points
+#         else:
+#             stamina = 0
+
+# # Function to simulate a sprint action
+# def sprint():
+#     global stamina
+#     if stamina >= sprint_cost:
+#         stamina -= sprint_cost
+#         print("Sprinting! Stamina:", stamina)
+#     else:
+#         print("Not enough stamina to sprint! Stopping sprint...")
+
+# # Start decreasing stamina in a separate thread
+# import threading
+# thread = threading.Thread(target=decrease_stamina)
+# thread.daemon = True
+# thread.start()
+
+# # Simulate sprint actions
+# while True:
+#     sprint()
+#     if stamina == 0:
+#         break  # Stop sprinting when stamina runs out
+#     time.sleep(2)  # Simulate some delay between sprint actions
+
+import time
+
+class Character:
+    def __init__(self, name, max_stamina):
+        self.name = name
+        self.max_stamina = max_stamina
+        self.stamina = max_stamina
+
+    def decrease_stamina(self):
+        while True:
+            time.sleep(10)  # Decrease stamina every 10 seconds
+            if self.stamina > 0:
+                self.stamina -= 5  # Decrease stamina by 5 points
+            else:
+                self.stamina = 0
+
+    def sprint(self):
+        if self.stamina >= sprint_cost:
+            self.stamina -= sprint_cost
+            print(f"{self.name} is sprinting! Stamina: {self.stamina}")
+        else:
+            print(f"{self.name} doesn't have enough stamina to sprint! Stopping sprint...")
+
+# Global variables
+sprint_cost = 10  # Stamina cost for sprinting
+
+# Create character instance
+player = Character("Player", 100)
+
+# Start decreasing stamina in a separate thread
+import threading
+thread = threading.Thread(target=player.decrease_stamina)
+thread.daemon = True
+thread.start()
+
+# Simulate sprint actions
+while True:
+    player.sprint()
+    if player.stamina == 0:
+        break  # Stop sprinting when stamina runs out
+    time.sleep(2)  # Simulate some delay between sprint actions
