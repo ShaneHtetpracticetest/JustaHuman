@@ -180,21 +180,18 @@ class Character:
         else:
             print(f"{self.name} doesn't have enough stamina to sprint! Stopping sprint...")
 
-# Global variables
-sprint_cost = 10  # Stamina cost for sprinting
 
-# Create character instance
+sprint_cost = 10  
+
 player = Character("Player", 100)
 
-# Start decreasing stamina in a separate thread
 import threading
 thread = threading.Thread(target=player.decrease_stamina)
 thread.daemon = True
 thread.start()
 
-# Simulate sprint actions
 while True:
     player.sprint()
     if player.stamina == 0:
-        break  # Stop sprinting when stamina runs out
-    time.sleep(2)  # Simulate some delay between sprint actions
+        break 
+    time.sleep(2) 
