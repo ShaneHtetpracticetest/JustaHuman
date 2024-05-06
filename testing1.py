@@ -20,19 +20,19 @@ class Genshin():
         print(link.CharacterName , " is sprinting")
         
     def decrease_stamina(link):
-            while True:
-                time.sleep(1)
-                if link.stamina > 0:
-                    link.stamina -= 30
-                else :
-                    link.stamina = 0
+        while True:
+            time.sleep(1)
+            if link.stamina > 0:
+                link.stamina -= 30
+            else :
+                link.stamina = 0
 
-        def sprinting(link):
-            if link.stamina >= sprint_cost: 
-                link.stamina -= sprint_cost
-                print(f"{link.name} is sprinting! Stamina: {link.stamina}")
-            else:
-                print(f"{link.name} doesn't have enough stamina to sprint! Stopping sprint...")
+    def sprinting(link):
+        if link.stamina >= sprint_cost: 
+            link.stamina -= sprint_cost
+        print(f"{link.name} is sprinting! Stamina: {link.stamina}")
+        else:
+            print(f"{link.name} doesn't have enough stamina to sprint! Stopping sprint...")
 sprint_cost = 30
 
 import threading
