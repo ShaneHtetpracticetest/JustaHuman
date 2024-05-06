@@ -160,25 +160,25 @@
 import time
 
 class Character:
-    def __init__(self, name, max_stamina):
-        self.name = name
-        self.max_stamina = max_stamina
-        self.stamina = max_stamina
+    def __init__(link, name, max_stamina):
+        link.name = name
+        link.max_stamina = max_stamina
+        link.stamina = max_stamina
 
-    def decrease_stamina(self):
+    def decrease_stamina(link):
         while True:
             time.sleep(10)  # Decrease stamina every 10 seconds
-            if self.stamina > 0:
-                self.stamina -= 5  # Decrease stamina by 5 points
+            if link.stamina > 0:
+                link.stamina -= 5  # Decrease stamina by 5 points
             else:
-                self.stamina = 0
+                link.stamina = 0
 
-    def sprint(self):
-        if self.stamina >= sprint_cost:
-            self.stamina -= sprint_cost
-            print(f"{self.name} is sprinting! Stamina: {self.stamina}")
+    def sprint(link):
+        if link.stamina >= sprint_cost:
+            link.stamina -= sprint_cost
+            print(f"{link.name} is sprinting! Stamina: {link.stamina}")
         else:
-            print(f"{self.name} doesn't have enough stamina to sprint! Stopping sprint...")
+            print(f"{link.name} doesn't have enough stamina to sprint! Stopping sprint...")
 
 
 sprint_cost = 10  
