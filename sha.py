@@ -157,41 +157,60 @@
 #         break  # Stop sprinting when stamina runs out
 #     time.sleep(2)  # Simulate some delay between sprint actions
 
+# import time
+
+# class Character:
+#     def __init__(link, name, max_stamina):
+#         link.name = name
+#         link.max_stamina = max_stamina
+#         link.stamina = max_stamina
+
+#     def decrease_stamina(link):
+#         while True:
+#             time.sleep(10)  # Decrease stamina every 10 seconds
+#             if link.stamina > 0:
+#                 link.stamina -= 5  # Decrease stamina by 5 points
+#             else:
+#                 link.stamina = 0
+
+#     def sprint(link):
+#         if link.stamina >= sprint_cost:
+#             link.stamina -= sprint_cost
+#             print(f"{link.name} is sprinting! Stamina: {link.stamina}")
+#         else:
+#             print(f"{link.name} doesn't have enough stamina to sprint! Stopping sprint...")
+
+
+# sprint_cost = 10  
+
+# player = Character("Player", 100)
+
+# import threading
+# thread = threading.Thread(target=player.decrease_stamina)
+# thread.daemon = True
+# thread.start()
+
+# while True:
+#     player.sprint()
+#     if player.stamina == 0:
+#         break 
+#     time.sleep(2) 
+
 import time
 
-class Character:
-    def __init__(link, name, max_stamina):
-        link.name = name
-        link.max_stamina = max_stamina
-        link.stamina = max_stamina
+class Phone:
+    def __init__(self, battery_capacity):
+        self.battery_capacity = battery_capacity
+        self.current_battery_level = battery_capacity
 
-    def decrease_stamina(link):
-        while True:
-            time.sleep(10)  # Decrease stamina every 10 seconds
-            if link.stamina > 0:
-                link.stamina -= 5  # Decrease stamina by 5 points
-            else:
-                link.stamina = 0
+    def decrease_battery(self, amount):
+        self.current_battery_level -= amount
+        if self.current_battery_level < 0:
+            self.current_battery_level = 0
 
-    def sprint(link):
-        if link.stamina >= sprint_cost:
-            link.stamina -= sprint_cost
-            print(f"{link.name} is sprinting! Stamina: {link.stamina}")
-        else:
-            print(f"{link.name} doesn't have enough stamina to sprint! Stopping sprint...")
+my_phone = Phone(battery_capacity=100)
 
-
-sprint_cost = 10  
-
-player = Character("Player", 100)
-
-import threading
-thread = threading.Thread(target=player.decrease_stamina)
-thread.daemon = True
-thread.start()
-
-while True:
-    player.sprint()
-    if player.stamina == 0:
-        break 
-    time.sleep(2) 
+while my_phone.current_battery_level > 0:
+    print("Current battery level:", my_phone.current_battery_level)
+    my_phone.decrease_battery(amount=5)  
+    time.sleep(2)  
